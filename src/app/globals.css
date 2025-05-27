@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f9f9f9;
+  --foreground: #1a1a1a;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --secondary: #e5e7eb;
+  --secondary-foreground: #1f2937;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --border: #e5e7eb;
+  --input: #ffffff;
+  --ring: #4f46e5;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #f9f9f9;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #2d2d2d;
+  --secondary-foreground: #f3f4f6;
+  --accent: #60a5fa;
+  --accent-foreground: #ffffff;
+  --muted: #2d2d2d;
+  --muted-foreground: #a1a1aa;
+  --card: #1e1e1e;
+  --card-foreground: #f9f9f9;
+  --border: #3d3d3d;
+  --input: #1e1e1e;
+  --ring: #6366f1;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .responsive-padding {
+    @apply px-4;
+  }
+  
+  .responsive-grid {
+    @apply grid-cols-1;
+  }
+}
+
+/* Accessibility improvements */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Print styles for resume */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Soft shadows */
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode transitions */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
